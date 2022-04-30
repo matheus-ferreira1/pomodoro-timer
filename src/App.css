@@ -16,6 +16,9 @@
    --gray-850: #1f2729;
    --gray-900: #121214;
 
+   --green: #4C9195;
+   --red: #D95550;
+
    --cyan-500: #61dafb;
    --yellow-500: #eba417;
 }
@@ -39,6 +42,7 @@ body {
    display: flex;
    align-items: center;
    justify-content: center;
+   background-color: var(--red);
 }
 
 body,
@@ -59,8 +63,20 @@ a {
 }
 
 .App {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-around;
    min-width: 300px;
    min-height: 300px;
-   outline: 1px solid tomato;
    text-align: center;
+   background-color: rgba(255, 255, 255, 0.1);
+   border-radius: .5rem;
+}
+
+.buttons {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 5px;
 }

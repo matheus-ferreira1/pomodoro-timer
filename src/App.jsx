@@ -1,15 +1,26 @@
+import { useState } from 'react';
 import './App.css'
+import Button from './Components/Button/Button';
+import Timer from './Components/Timer/Timer';
 
 function App() {
+
+  const [timer, setTimer] = useState(1500);
+  const [playButton, setPlayButton] = useState(true);
+
+  function handleClick(name) {
+    console.log(`deu certo ${name}`)
+  }
+
   return (
     <div className="App">
-      <h1>Pomodoro timer</h1>
-      <input type="range" />
-      <select name="time" id="time">
-        <option disabled selected value="">Select you option</option>
-        <option value="1">25 : 5 minutes</option>
-        <option value="1">50 : 15 minutes</option>
-      </select>
+      <h2>Pomodoro timer</h2>
+      <Timer timer={timer} />
+      <div className="buttons">
+        <Button onClick={handleClick} name='start' />
+        <Button onClick={handleClick} name='pause' />
+        <Button onClick={handleClick} name='reset' />
+      </div>
     </div>
   );
 }
